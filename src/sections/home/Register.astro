@@ -41,7 +41,7 @@
           <label class="label">
             <span class="label-text">Date of birth <span class="text-red-500 text-lg">*</span> </span>
           </label>
-          <input required="required" type="date" class="input input-bordered w-full max-w-xs" />
+          <input required="required" placeholder="mm/dd/yyyy" type="date" class="input input-bordered w-full max-w-xs" />
         </div>
       </div>
       <div class="w-full grid gap-5 sm:grid-cols-2">
@@ -125,12 +125,9 @@
 
   dateInput.addEventListener('input', e=>{
     const inputtedDate = e.target.value
-    console.log(inputtedDate)
     if(calculateAge(inputtedDate)<18)
         parentsDetails.classList.remove('hidden')
     else parentsDetails.classList.add('hidden')
-    
-
   })
 
 </script>
