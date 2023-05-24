@@ -1,0 +1,39 @@
+
+---
+import Terms from "../../content/t-and-c.md";
+
+---
+
+
+<input type="checkbox" id="terms-modal" class="modal-toggle" />
+  <div class="modal modal-bottom sm:modal-middle pt-4 lg:pt-0 lg:pb-8 px-4">
+    <div
+      class="modal-box prose prose-invert bg-slate-800 mx-auto -mt-28 rounded-lg p-6 lg:p-8 overflow-hidden"
+    >
+      <div class="flex justify-between items-center">
+        <h3 class="my-0">Terms & Conditions</h3>
+        <div class="modal-action my-0">
+          <label for="terms-modal" class="btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </label>
+        </div>
+      </div>
+      <div
+        class="h-[70vh] overflow-y-auto scrollbar-thumb-gray-700 scrollbar-track-gray-900 scrollbar-thin scrollbar-thumb-rounded-full scrollbar-corner-rounded-full scrollbar-track-rounded-full pr-4 mt-4"
+      >
+        <Terms />
+      </div>
+    </div>
+  </div>

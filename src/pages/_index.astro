@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Terms from "../content/t-and-c.md";
+---
+
+<BaseLayout title="Goa Association Of Squash">
+  <section
+    class="bg-no-repeat bg-cover bg-center text-emerald-50 min-h-[80vh] flex items-center relative"
+    style="background-image: url('/images/stripe.svg');"
+  >
+    <div
+      class="container mx-auto px-5 py-20 lg:py-48 flex flex-col lg:text-center z-10"
+    >
+      <span class="text-xl">Goa Association Of Squash</span>
+      <h1 class="text-4xl lg:text-6xl font-black mt-2">
+        Registration for <br /> the National Games
+		<span class="text-4xl block mt-2">Goa State Team  2023</span>
+      </h1>
+    </div>
+   <div class="absolute h-[550px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+	<img id="racket" src="/racket.png" alt="" class=" opacity-70 max-h-full -rotate-[30deg]" />
+   </div>
+  </section>
+
+  <section class="relative min-h-screen">
+
+	<div class="container px-5 py-10 lg:py-20 w-1/2 flex flex-col justify-center min-h-screen">
+		<span class="text-xl">Goa Association Of Squash</span>
+		<h1 class="text-4xl lg:text-6xl font-black mt-2">
+		  Registration for <br /> the National Games
+		  <span class="text-4xl block mt-2">Goa State Team  2023</span>
+		</h1>
+	</div>
+	<div class="h-screen w-1/2 bg-cover bg-no-repeat bg-center absolute right-0 top-0" style="background-image: url('/images/img-1.jpg');"></div>
+  </section>
+
+  <section>
+    <div class="container mx-auto px-5 py-10">
+      <div class="prose prose-invert mx-auto">
+        <Terms />
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- <script is:inline>
+	const racket = document.querySelector('#racket')
+	document.addEventListener('scroll',()=>{
+		const scroll = window.scrollY
+		const computedStyle = window.getComputedStyle(racket)
+		const computedHeight = parseInt(computedStyle.getPropertyValue('height'))
+		const height = scroll * 4
+		console.log(scroll)
+		console.log(computedHeight)
+		if (height<450) racket.style.height ='450px'
+		else if (height>850) racket.style.height ='850px'
+		else racket.style.height = height+'px'
+
+	})
+
+  </script> -->
+
+</BaseLayout>
