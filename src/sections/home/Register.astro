@@ -4,93 +4,134 @@
       <div class="w-full grid gap-5 sm:grid-cols-2">
         <div class="form-control w-full max-w-xs mx-auto flex flex-col">
           <label class="label">
-            <span class="label-text">Name <span class="text-red-500 text-lg">*</span> </span>
+            <span class="label-text"
+              >Name <span class="text-red-500 text-lg">*</span>
+            </span>
           </label>
           <input
-          required="required"
+            required="required"
             type="text"
             placeholder="John Doe"
-            class="input input-bordered w-full max-w-xs"
+            class="input input-bordered w-full max-w-xs z-10"
           />
         </div>
         <div class="form-control w-full max-w-xs mx-auto flex flex-col">
           <label class="label">
-            <span class="label-text">Phone number <span class="text-red-500 text-lg">*</span> </span>
+            <span class="label-text"
+              >Phone number <span class="text-red-500 text-lg">*</span>
+            </span>
           </label>
           <input
-          required="required"
+            required="required"
             type="tel"
             placeholder="9822334455"
-            class="input input-bordered w-full max-w-xs"
+            class="input input-bordered w-full max-w-xs z-10"
           />
         </div>
       </div>
       <div class="w-full grid gap-5 sm:grid-cols-2">
         <div class="form-control w-full max-w-xs mx-auto flex flex-col">
           <label class="label">
-            <span class="label-text">Email address <span class="text-red-500 text-lg">*</span> </span>
+            <span class="label-text"
+              >Email address <span class="text-red-500 text-lg">*</span>
+            </span>
           </label>
           <input
-          required="required"
+            required="required"
             type="email"
             placeholder="john@doe.com"
-            class="input input-bordered w-full max-w-xs"
+            class="input input-bordered w-full max-w-xs z-10"
           />
         </div>
         <div class="form-control w-full max-w-xs mx-auto flex flex-col">
           <label class="label">
-            <span class="label-text">Date of birth <span class="text-red-500 text-lg">*</span> </span>
+            <span class="label-text"
+              >Date of birth <span class="text-red-500 text-lg">*</span>
+            </span>
           </label>
-          <input required="required" placeholder="mm/dd/yyyy" type="date" class="input input-bordered w-full max-w-xs" />
+          <input
+            required="required"
+            placeholder="mm/dd/yyyy"
+            type="date"
+            class="input input-bordered w-full max-w-xs z-10"
+          />
         </div>
       </div>
       <div class="w-full grid gap-5 sm:grid-cols-2">
         <div class="form-control w-full max-w-xs mx-auto flex flex-col">
           <label class="label">
-            <span class="label-text">GAS Registration Number <span class="text-red-500 text-lg">*</span> </span>
+            <span class="label-text"
+              >GAS Registration Number <span class="text-red-500 text-lg"
+                >*</span
+              >
+            </span>
           </label>
           <input
-          required="required"
+            required="required"
             type="text"
             placeholder="XXXX1234"
-            class="input input-bordered w-full max-w-xs"
+            class="input input-bordered w-full max-w-xs z-10"
           />
         </div>
         <div class="form-control w-full max-w-xs mx-auto flex flex-col">
           <label class="label">
-            <span class="label-text">iSpin number </span>
+            <span class="label-text">iSpin number</span>
           </label>
-          <input type="text" placeholder="XXXX1234" class="input input-bordered w-full max-w-xs" />
+          <input
+            type="text"
+            placeholder="XXXX1234"
+            class="input input-bordered w-full max-w-xs z-10"
+          />
         </div>
       </div>
       <div class="w-full hidden" id="parents-details">
         <div class="w-full grid gap-5 sm:grid-cols-2">
-            <div class="form-control w-full max-w-xs mx-auto flex flex-col">
-              <label class="label">
-                <span class="label-text">Parent's name <span class="text-red-500 text-lg">*</span> </span>
-              </label>
-              <input
-                type="text"
-                placeholder="Jane Doe"
-                class="input input-bordered w-full max-w-xs"
-              />
-            </div>
-            <div class="form-control w-full max-w-xs mx-auto flex flex-col">
-              <label class="label">
-                <span class="label-text">Parent's phone number <span class="text-red-500 text-lg">*</span></span>
-              </label>
-              <input type="tel" placeholder="9822334455" class="input input-bordered w-full max-w-xs" />
-            </div>
+          <div class="form-control w-full max-w-xs mx-auto flex flex-col">
+            <label class="label">
+              <span class="label-text"
+                >Parent's name <span class="text-red-500 text-lg">*</span>
+              </span>
+            </label>
+            <input
+              type="text"
+              placeholder="Jane Doe"
+              class="input input-bordered w-full max-w-xs z-10"
+            />
           </div>
+          <div class="form-control w-full max-w-xs mx-auto flex flex-col">
+            <label class="label">
+              <span class="label-text"
+                >Parent's phone number <span class="text-red-500 text-lg"
+                  >*</span
+                ></span
+              >
+            </label>
+            <input
+              type="tel"
+              placeholder="9822334455"
+              class="input input-bordered w-full max-w-xs z-10"
+            />
+          </div>
+        </div>
       </div>
-      <button class="btn btn-primary mt-4 w-full md:w-fit">Submit</button>
+      <div>
+        <div class="form-control">
+          <div class="w-full flex items-center gap-2 flex-row mt-4">
+            <input type="checkbox" class="checkbox checkbox-sm" />
+            <span class="label-text"
+              >I have read the
+                <label for="terms-modal" class="underline cursor-pointer">Terms & Conditions</label></span>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-primary w-full md:w-fit">Submit</a>
     </form>
   </div>
 </section>
 
 <script is:inline>
   const calculateAge = (dob) => {
-    const birthDate = new Date(dob)
+    const birthDate = new Date(dob);
     const currentDate = new Date();
     const birthYear = birthDate.getFullYear();
     const birthMonth = birthDate.getMonth();
@@ -120,13 +161,12 @@
   dateInput.setAttribute("max", formattedDate);
   dateInput.setAttribute("min", "1950-01-01");
 
-  const parentsDetails = document.querySelector('#parents-details')
+  const parentsDetails = document.querySelector("#parents-details");
 
-  dateInput.addEventListener('input', e=>{
-    const inputtedDate = e.target.value
-    if(calculateAge(inputtedDate)<18)
-        parentsDetails.classList.remove('hidden')
-    else parentsDetails.classList.add('hidden')
-  })
-
+  dateInput.addEventListener("input", (e) => {
+    const inputtedDate = e.target.value;
+    if (calculateAge(inputtedDate) < 18)
+      parentsDetails.classList.remove("hidden");
+    else parentsDetails.classList.add("hidden");
+  });
 </script>
