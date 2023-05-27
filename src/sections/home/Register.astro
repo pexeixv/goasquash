@@ -1,6 +1,21 @@
-<section class="px-4" id="register">
-  <div class="w-full max-w-2xl bg-slate-800 mx-auto -mt-32 rounded-t-lg p-8">
-    <form action="" class="flex flex-col items-center gap-5">
+<section class="px-4">
+  <div
+    class="w-full max-w-2xl bg-slate-800 mx-auto -mt-32 rounded-t-lg p-8"
+    id="register"
+  >
+    <form
+      action="https://formsubmit.co/pipizewo@mailgolem.com"
+      method="POST"
+      class="flex flex-col items-center gap-5"
+    >
+      <div class="alert shadow-lg hidden" id="thanks-alert">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>          
+          <span>We have received your form submission. A copy of the submission is sent to your inbox.</span>
+        </div>
+      </div>
       <div class="w-full grid gap-5 sm:grid-cols-2">
         <div class="form-control w-full max-w-xs mx-auto flex flex-col">
           <label class="label">
@@ -9,6 +24,7 @@
             </span>
           </label>
           <input
+            name="name"
             required="required"
             type="text"
             placeholder="John Doe"
@@ -22,6 +38,7 @@
             </span>
           </label>
           <input
+            name="phoneNumber"
             required="required"
             type="tel"
             placeholder="9822334455"
@@ -37,6 +54,7 @@
             </span>
           </label>
           <input
+            name="email"
             required="required"
             type="email"
             placeholder="john@doe.com"
@@ -50,6 +68,7 @@
             </span>
           </label>
           <input
+            name="dob"
             required="required"
             placeholder="mm/dd/yyyy"
             type="date"
@@ -67,6 +86,7 @@
             </span>
           </label>
           <input
+            name="gas"
             required="required"
             type="text"
             placeholder="XXXX1234"
@@ -78,6 +98,7 @@
             <span class="label-text">iSpin number</span>
           </label>
           <input
+            name="ispin"
             type="text"
             placeholder="XXXX1234"
             class="input input-bordered w-full max-w-xs z-10"
@@ -93,6 +114,7 @@
               </span>
             </label>
             <input
+              name="parentName"
               type="text"
               placeholder="Jane Doe"
               class="input input-bordered w-full max-w-xs z-10"
@@ -107,6 +129,7 @@
               >
             </label>
             <input
+              name="parentPhone"
               type="tel"
               placeholder="9822334455"
               class="input input-bordered w-full max-w-xs z-10"
@@ -114,17 +137,33 @@
           </div>
         </div>
       </div>
+      <input type="hidden" name="_subject" value="New registration at GAS!">
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_autoresponse" value="We have received your response. Thanks for registering for the National Games 2023 with Goa Association of Squash.">
+      <input type="hidden" name="_next" value="https://gas.gavn.in/#register?thanks">
+
+
+
       <div>
         <div class="form-control">
           <div class="w-full flex items-center gap-2 flex-row mt-4">
-            <input type="checkbox" class="checkbox checkbox-sm" />
+            <input
+              required="required"
+              type="checkbox"
+              class="checkbox checkbox-sm"
+            />
             <span class="label-text"
               >I have read the
-                <label for="terms-modal" class="underline cursor-pointer">Terms & Conditions</label></span>
+              <label for="terms-modal" class="underline cursor-pointer"
+                >Terms & Conditions</label
+              ></span
+            >
           </div>
         </div>
       </div>
-      <a class="btn btn-primary w-full md:w-fit">Submit</a>
+      <button type="submit" class="btn btn-primary w-full md:w-fit">Send</button
+      >
     </form>
   </div>
 </section>
@@ -162,11 +201,28 @@
   dateInput.setAttribute("min", "1950-01-01");
 
   const parentsDetails = document.querySelector("#parents-details");
+  const parentInputs = document.querySelectorAll("#parents-details input");
 
   dateInput.addEventListener("input", (e) => {
     const inputtedDate = e.target.value;
-    if (calculateAge(inputtedDate) < 18)
+    if (calculateAge(inputtedDate) < 18) {
       parentsDetails.classList.remove("hidden");
-    else parentsDetails.classList.add("hidden");
+      parentInputs.forEach((input) =>
+        input.setAttribute("required", "required")
+      );
+    } else {
+      parentsDetails.classList.add("hidden");
+      parentInputs.forEach((input) => input.removeAttribute("required"));
+    }
   });
+
+  const url = document.URL
+  const isThanks = url.includes('thanks')
+  const alert = document.querySelector('#thanks-alert')
+
+  if(isThanks) {
+    alert.classList.remove('hidden')
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+  else alert.classList.add('hidden')
 </script>
