@@ -4,16 +4,30 @@
     id="register"
   >
     <form
-      action="https://formsubmit.co/stan@ironcrust.com"
+      action="https://formsubmit.co/pipizewo@mailgolem.com"
       method="POST"
       class="flex flex-col items-center gap-5"
     >
       <div class="alert shadow-lg hidden" id="thanks-alert">
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>          
-          <span>We have received your form submission. A copy of the submission is sent to your inbox.</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <span
+            >We have received your form submission. A copy of the submission is
+            sent to your inbox.</span
+          >
         </div>
       </div>
       <div class="w-full grid gap-5 sm:grid-cols-2">
@@ -38,6 +52,8 @@
             </span>
           </label>
           <input
+            maxlength="10"
+            minlength="10"
             name="phoneNumber"
             required="required"
             type="tel"
@@ -104,6 +120,39 @@
             class="input input-bordered w-full max-w-xs z-10"
           />
         </div>
+      </div><div class="w-full grid gap-5 sm:grid-cols-2">
+        <div class="form-control w-full max-w-xs mx-auto flex flex-col">
+          <label class="label">
+            <span class="label-text"
+              >Aadhaar card number<span class="text-red-500 text-lg"
+                >*</span
+              >
+            </span>
+          </label>
+          <input
+            name="aadhaar"
+            required="required"
+            type="number"
+            placeholder="1234123412341234"
+            min="0"
+            minlength="16"
+            maxlength="16"
+            class="input input-bordered w-full max-w-xs z-10"
+          />
+        </div>
+        <div class="form-control w-full max-w-xs mx-auto flex flex-col">
+          <label class="label">
+            <span class="label-text">Years of domicile in Goa</span>
+          </label>
+          <input
+            name="domicile"
+            type="number"
+            placeholder="0"
+            min="0"
+            max="100"
+            class="input input-bordered w-full max-w-xs z-10"
+          />
+        </div>
       </div>
       <div class="w-full hidden" id="parents-details">
         <div class="w-full grid gap-5 sm:grid-cols-2">
@@ -129,6 +178,8 @@
               >
             </label>
             <input
+              maxlength="10"
+              minlength="10"
               name="parentPhone"
               type="tel"
               placeholder="9822334455"
@@ -137,13 +188,19 @@
           </div>
         </div>
       </div>
-      <input type="hidden" name="_subject" value="New registration at GAS!">
-      <input type="text" name="_honey" style="display:none">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_autoresponse" value="We have received your response. Thanks for registering for the National Games 2023 with Goa Association of Squash.">
-      <input type="hidden" name="_next" value="https://gas.gavn.in/#register?thanks">
-
-
+      <input type="hidden" name="_subject" value="New registration at GAS!" />
+      <input type="text" name="_honey" style="display:none" />
+      <input type="hidden" name="_template" value="table" />
+      <input
+        type="hidden"
+        name="_autoresponse"
+        value="We have received your response. Thanks for registering for the National Games 2023 with Goa Association of Squash."
+      />
+      <input
+        type="hidden"
+        name="_next"
+        value="https://gas.gavn.in/#register?thanks"
+      />
 
       <div>
         <div class="form-control">
@@ -216,13 +273,12 @@
     }
   });
 
-  const url = document.URL
-  const isThanks = url.includes('thanks')
-  const alert = document.querySelector('#thanks-alert')
+  const url = document.URL;
+  const isThanks = url.includes("thanks");
+  const alert = document.querySelector("#thanks-alert");
 
-  if(isThanks) {
-    alert.classList.remove('hidden')
+  if (isThanks) {
+    alert.classList.remove("hidden");
     window.scrollTo(0, document.body.scrollHeight);
-  }
-  else alert.classList.add('hidden')
+  } else alert.classList.add("hidden");
 </script>
