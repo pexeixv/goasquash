@@ -2,7 +2,7 @@
 
 1. Decision of team composition is based on selection trials and sole discretion of the selection committee appointed by the Goa Association Of Squash.
 
-1. Any player influencing, soliciting or lobbying the selection the selection procedure, will be disqualified.
+1. Any player influencing, soliciting or lobbying the selection procedure, will be disqualified.
 
 1. Undertaking to attend the training camps is compulsory.
 
